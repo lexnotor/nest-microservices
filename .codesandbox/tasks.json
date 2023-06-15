@@ -1,5 +1,27 @@
 {
-  "$schema": "https://codesandbox.io/p/schemas/tasks.json",
-  "setupTasks": [],
-  "tasks": {}
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "pnpm i",
+      "command": "pnpm i"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "logger": {
+      "name": "start micro",
+      "command": "pnpm --filter logger start:dev",
+      "preview": {
+        "port": 3001
+      }
+    },
+    "backend": {
+      "name": "start server",
+      "command": "pnpm --filter backend start:dev",
+      "preview": {
+        "port": 3000
+      }
+    }
+  }
 }
